@@ -4,67 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio Universitario</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/v1/index.css">
+    <style>
+        /* Estilos base elegantes y oscuros */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Contenedor centralizado */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Cada sección actúa como una diapositiva ejecutiva */
+        .slide {
+            background-color: #1e293b;
+            border-left: 5px solid #3b82f6;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1 {
+            color: #3b82f6;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #60a5fa;
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #93c5fd;
+        }
+
+        p, li {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        /* Tablas académicas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #0f172a;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: #f8fafc;
+        }
+
+        /* Cuadrícula para las fotos del semestre */
+        .grid-fotos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .tarjeta-foto {
+            background-color: #0f172a;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        .tarjeta-foto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tarjeta-foto .descripcion {
+            padding: 15px;
+        }
+
+        .tarjeta-foto p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Código resaltado */
+        code {
+            background-color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #f43f5e;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Mi Portafolio del Semestre</h1>
-        <nav>
-            <a href="#inicio">Inicio</a> | 
-            <a href="#logica">Lógica Proposicional</a> | 
-            <a href="#galeria">Evidencias</a>
-        </nav>
-    </header>
+    <div class="container">
 
-    <hr>
+        <h1>Portafolio Académico Digital</h1>
 
-    <section id="inicio">
-        <h2>Bienvenido</h2>
-        <p>Hola, este es mi blog universitario donde recopilo el trabajo realizado durante este semestre, incluyendo conceptos clave de informática y registros de mis actividades.</p>
-    </section>
+        <!-- DIAPOSITIVA 1: INTRODUCCIÓN -->
+        <section class="slide">
+            <h2>01. Introducción y Presentación</h2>
+            <p><strong>Autor:</strong> [Tu Nombre Aquí]</p>
+            <p><strong>Carrera:</strong> Ingeniería en Informática</p>
+            <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;">
+            <p>Bienvenido a mi bitácora digital del semestre. Este espacio ha sido diseñado para recopilar tanto las evidencias prácticas de las actividades realizadas en los laboratorios y aulas, como el desarrollo teórico de los fundamentos lógicos que sustentan la informática.</p>
+        </section>
 
-    <hr>
-
-    <section id="logica">
-        <h2>Introducción a la Lógica Proposicional</h2>
-        <p>La lógica proposicional es la rama de la lógica que estudia las proposiciones y las relaciones entre ellas.</p>
-        
-        <h3>¿Qué es una proposición?</h3>
-        <p>Es un enunciado que puede ser verdadero o falso, pero no ambos. Por ejemplo: <em>"El código tiene un error"</em>.</p>
-
-        <h3>Conectores Lógicos Principales</h3>
-        <ul>
-            <li><strong>Negación (¬):</strong> Invierte el valor (No).</li>
-            <li><strong>Conjunción (∧):</strong> Es verdadera solo si ambos son verdaderos (Y).</li>
-            <li><strong>Disyunción (∨):</strong> Es verdadera si al menos uno es verdadero (O).</li>
-            <li><strong>Condicional (→):</strong> Si ocurre lo primero, entonces ocurre lo segundo.</li>
-            <li><strong>Bicondicional (↔):</strong> Es verdadero si ambos tienen el mismo valor (Si y solo si).</li>
-        </ul>
-    </section>
-
-    <hr>
-
-    <section id="galeria">
-        <h2>Evidencia Fotográfica del Semestre</h2>
-        <p>Aquí se muestra el progreso de mis actividades a lo largo de estos meses:</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
-                <img src="foto1.jpg" alt="Evidencia 1" style="width: 100%; height: auto;">
-                <p><strong>Semana 4:</strong> Descripción de lo que hiciste en esta foto.</p>
-            </div>
+        <!-- DIAPOSITIVA 2: LOGICA PROPOSICIONAL -->
+        <section class="slide">
+            <h2>02. Fundamentos de Lógica Proposicional</h2>
+            <p>La lógica proposicional es una rama de la lógica formal que estudia las proposiciones y cómo se combinan mediante conectivos lógicos para formar argumentos válidos.</p>
             
-            <div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
-                <img src="foto2.jpg" alt="Evidencia 2" style="width: 100%; height: auto;">
-                <p><strong>Semana 8:</strong> Descripción de lo que hiciste en esta foto.</p>
-            </div>
-        </div>
-    </section>
+            <h3>¿Qué es una proposición?</h3>
+            <p>Es cualquier enunciado declarativo del cual se puede afirmar de manera inequívoca que es <strong>Verdadero (V)</strong> o <strong>Falso (F)</strong>. Las preguntas o exclamaciones no califican como proposiciones.</p>
+            
+            <h3>Conectores Lógicos Principales</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Símbolo</th>
+                        <th>Significado</th>
+                        <th>Condición de Verdad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Negación</strong></td>
+                        <td>¬</td>
+                        <td>"No"</td>
+                        <td>Invierte el valor de verdad original.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conjunción</strong></td>
+                        <td>∧</td>
+                        <td>"Y"</td>
+                        <td>Solo es verdadera si ambas partes son verdaderas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Disyunción</strong></td>
+                        <td>∨</td>
+                        <td>"O"</td>
+                        <td>Es falsa únicamente si ambas partes son falsas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Condicional</strong></td>
+                        <td>→</td>
+                        <td>"Si... entonces"</td>
+                        <td>Solo es falsa cuando el antecedente es V y el consecuente es F.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bicondicional</strong></td>
+                        <td>↔</td>
+                        <td>"Si y solo si"</td>
+                        <td>Es verdadera si ambos lados tienen el mismo valor.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <footer>
-        <p>© 2026 - Creado para el cierre de semestre</p>
-    </footer>
+        <!-- DIAPOSITIVA 3: EVIDENCIAS FOTOGRÁFICAS -->
+        <section class="slide">
+            <h2>03. Evidencias del Semestre</h2>
+            <p>A continuación se presentan de forma cronológica las actividades, prácticas de laboratorio e informes más significativos desarrollados durante este periodo académico:</p>
+            
+            <div class="grid-fotos">
+                
+                <!-- Tarjeta de Evidencia 1 -->
+                <div class="tarjeta-foto">
+                    <!-- Aquí irá tu foto. Por ahora dejamos una de marcador de posición -->
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=400&q=80" alt="Evidencia 1">
+                    <div class="descripcion">
+                        <h3>Primer Corte: Prácticas Iniciales</h3>
+                        <p>Descripción detallada de tu primera foto. Por ejemplo: Organización de los primeros grupos de trabajo y entrega del informe manuscrito sobre la ética del ingeniero.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Evidencia 2 -->
+                <div class="tarjeta-foto">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Evidencia 2">
+                    <div class="descripcion">
+                        <h3>Segundo Corte: Evaluaciones de Lógica</h3>
+                        <p>Descripción detallada de tu segunda foto. Por ejemplo: Resolución de ejercicios de tablas de verdad y simplificación de circuitos lógicos en el pizarrón.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Evidencia 3 -->
+                <div class="tarjeta-foto">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Evidencia 3">
+                    <div class="descripcion">
+                        <h3>Cierre de Semestre</h3>
+                        <p>Descripción detallada de tu tercera foto. Por ejemplo: Compilación final del portafolio digital y defensa del proyecto integrador.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
 
 </body>
 </html>
