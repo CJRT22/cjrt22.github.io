@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Académico - Ingeniería en Informática</title>
+    <title>Portafolio Académico Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* ESTILOS BASE ELEGANTES Y OSCUROS */
+        /* CONFIGURACIÓN Y COLORES BASE (ESTILO OSCURO TECH) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0f172a;
@@ -15,42 +16,80 @@
             line-height: 1.6;
         }
 
-        /* CONTENEDOR ADAPTABLE A PC Y CELULARES */
         .container {
             max-width: 900px;
-            width: 90%;
+            width: 92%;
             margin: 0 auto;
-            padding: 20px 10px;
+            padding: 20px 0;
         }
 
-        /* DIAPOSITIVAS / SECCIONES */
+        /* ESTILO SECCIONES (DIAPOSITIVAS) */
         .slide {
             background-color: #1e293b;
             border-left: 5px solid #3b82f6;
             border-radius: 8px;
-            padding: 30px;
+            padding: 35px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        h1 {
-            color: #3b82f6;
+        /* DISEÑO EXCLUSIVO PARA LA PORTADA */
+        .portada {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 60px 40px;
             text-align: center;
-            font-size: 2.3rem;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
 
+        .portada h1 {
+            color: #3b82f6;
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .portada .subtitulo {
+            font-size: 1.5rem;
+            color: #60a5fa;
+            margin: 0 0 40px 0;
+            font-weight: 300;
+        }
+
+        .info-portada {
+            background-color: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+            border: 1px solid #334155;
+        }
+
+        .info-portada p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        /* TIPOGRAFÍA GENERAL */
         h2 {
             color: #60a5fa;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             margin-top: 0;
             border-bottom: 1px solid #334155;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         h3 {
             color: #93c5fd;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            margin-top: 20px;
         }
 
         p, li {
@@ -58,73 +97,104 @@
             font-size: 1.05rem;
         }
 
-        /* CONTENEDOR ESPECIAL PARA QUE LA TABLA NO SE SALGA EN MÓVILES */
-        .contenedor-tabla {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 20px 0;
-            border-radius: 6px;
-            border: 1px solid #334155;
-        }
-
-        /* TABLAS ACADÉMICAS */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #0f172a;
-            min-width: 600px; /* Asegura que la tabla mantenga forma al deslizar en celular */
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #334155;
-        }
-
-        th {
-            background-color: #1e3a8a;
-            color: #f8fafc;
-        }
-
-        /* CUADRÍCULA DE FOTOS RESPONSIVE */
-        .grid-fotos {
+        /* DISEÑO DE CONTENEDOR MÓDULOS (TEXTO + FOTO) */
+        .modulo-contenido {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-top: 20px;
         }
 
         .tarjeta-foto {
             background-color: #0f172a;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             border: 1px solid #334155;
         }
 
         .tarjeta-foto img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
             display: block;
         }
 
-        .tarjeta-foto .descripcion {
-            padding: 15px;
+        .tarjeta-foto .pie-foto {
+            padding: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+            background-color: #111827;
+            color: #9ca3af;
+            border-top: 1px solid #334155;
         }
 
-        .tarjeta-foto p {
-            font-size: 0.95rem;
-            margin: 0;
+        /* DISEÑO DE LA MEDIATECA (DESCARGAS) */
+        .grid-mediateca {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        /* OPTIMIZACIÓN AUTOMÁTICA PARA PANTALLAS DE CELULARES */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.3rem; }
-            p, li { font-size: 1rem; }
+        .item-descarga {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #f8fafc;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-descarga:hover {
+            border-color: #3b82f6;
+            background-color: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        .item-descarga i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .icon-pdf { color: #ef4444; }
+        .icon-powerpoint { color: #f97316; }
+
+        .item-descarga span {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* ESTILO PARA EL STORYTIME */
+        .storytime-box {
+            background-color: #0f172a;
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid #a855f7; /* Toque morado diferente para el storytime */
+            font-style: italic;
+        }
+
+        /* OPTIMIZACIÓN COMPLETA PARA TELÉFONOS (RESPONSIVE) */
+        @media (max-width: 768px) {
+            .portada { padding: 40px 20px; }
+            .portada h1 { font-size: 1.9rem; }
+            .portada .subtitulo { font-size: 1.2rem; }
+            
+            .modulo-contenido {
+                grid-template-columns: 1fr; /* Pone la foto debajo del texto en celulares */
+                gap: 20px;
+            }
+            
             .slide { padding: 20px; }
-            .grid-fotos { grid-template-columns: 1fr; } /* Fotos una debajo de otra en celular */
+            h2 { font-size: 1.4rem; }
+            
+            .tarjeta-foto img { height: 200px; }
         }
     </style>
 </head>
@@ -132,102 +202,95 @@
 
     <div class="container">
 
-        <h1>Portafolio Académico Digital</h1>
+        <header class="portada">
+            <h1>Portafolio Académico</h1>
+            <div class="subtitulo">Evidencias del Semestre</div>
+            
+            <div class="info-portada">
+                <p><strong><i class="fa-solid fa-user"></i> Estudiante:</strong> [Tu Nombre Completo]</p>
+                <p><strong><i class="fa-solid fa-graduation-cap"></i> Carrera:</strong> Ingeniería en Informática</p>
+                <p><strong><i class="fa-solid fa-university"></i> Institución:</strong> UNELLEZ</p>
+                <p><strong><i class="fa-solid fa-calendar"></i> Período:</strong> Semestre 2026-I</p>
+            </div>
+        </header>
 
         <section class="slide">
-            <h2>01. Introducción y Presentación</h2>
-            <p><strong>Autor:</strong> camilo</p>
-            <p><strong>Carrera:</strong> Ingeniería en Informática</p>
-            <p><strong>Institución:</strong> UNELLEZ</p>
-            <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;">
-            <p>Bienvenido a mi bitácora digital del semestre. Este espacio ha sido diseñado para recopilar tanto las evidencias prácticas de las actividades realizadas, como el desarrollo teórico de los fundamentos lógicos y matemáticos que sustentan nuestra carrera.</p>
+            <h2><i class="fa-solid fa-book-open"></i> Introducción</h2>
+            <p>El presente portafolio digital constituye una recopilación sistemática de las actividades, conocimientos y experiencias adquiridas a lo largo de este trayecto académico. A través de este espacio, se estructura el progreso alcanzado en las diferentes unidades del saber, reflejando el desarrollo de competencias lógicas, analíticas y tecnológicas fundamentales para el ejercicio de la Ingeniería en Informática.</p>
         </section>
 
         <section class="slide">
-            <h2>02. Fundamentos de Lógica Proposicional</h2>
-            <p>La lógica proposicional es una rama fundamental de la informática que nos permite formalizar el razonamiento humano mediante expresiones lógicas matemáticas.</p>
-            
-            <h3>¿Qué es una proposición?</h3>
-            <p>Es un enunciado declarativo del cual se puede afirmar con total certeza si es <strong>Verdadero (V)</strong> o <strong>Falso (F)</strong>, pero nunca ambos a la vez.</p>
-            
-            <h3>Conectores Lógicos Principales</h3>
-            
-            <div class="contenedor-tabla">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Operación</th>
-                            <th>Símbolo</th>
-                            <th>Significado</th>
-                            <th>Condición de Verdad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Negación</strong></td>
-                            <td>¬</td>
-                            <td>"No"</td>
-                            <td>Invierte el valor de verdad de la proposición.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Conjunción</strong></td>
-                            <td>∧</td>
-                            <td>"Y"</td>
-                            <td>Solo es verdadera si ambas proposiciones son verdaderas.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Disyunción</strong></td>
-                            <td>∨</td>
-                            <td>"O"</td>
-                            <td>Es falsa únicamente si ambas proposiciones son falsas.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Condicional</strong></td>
-                            <td>→</td>
-                            <td>"Si... entonces"</td>
-                            <td>Solo es falsa cuando el antecedente es V y el consecuente es F.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Bicondicional</strong></td>
-                            <td>↔</td>
-                            <td>"Si y solo si"</td>
-                            <td>Es verdadera si ambas proposiciones tienen el mismo valor.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2><i class="fa-solid fa-cubes"></i> Módulo 1: Fundamentos y Lógica</h2>
+            <div class="modulo-contenido">
+                <div>
+                    <h3>Desarrollo Temático</h3>
+                    <p>En esta sección inicial abordamos los pilares teóricos del semestre. Destaca el estudio de la <strong>lógica proposicional</strong>, donde aprendimos a estructurar razonamientos formales empleando conectores lógicos (negación, conjunción, disyunción, condicional y bicondicional) y a determinar su validez mediante el análisis de tablas de verdad.</p>
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="modulo1.jpg" alt="Evidencia Módulo 1">
+                    <div class="pie-foto">Evidencia fotográfica del Módulo 1</div>
+                </div>
             </div>
         </section>
 
         <section class="slide">
-            <h2>03. Evidencias del Semestre</h2>
-            <p>Registro fotográfico de las actividades clave y evaluaciones desarrolladas a lo largo del periodo académico:</p>
+            <h2><i class="fa-solid fa-code"></i> Módulo 2: Algoritmos y Aplicación</h2>
+            <div class="modulo-contenido">
+                <div>
+                    <h3>Desarrollo Temático</h3>
+                    <p>Durante el segundo bloque nos adentramos en la fase práctica e interactiva. Tradujimos los conceptos abstractos de la lógica hacia la resolución de problemas estructurados, elaborando los primeros diagramas de flujo, análisis de requerimientos y esquemas aplicados que sientan las bases de los sistemas informáticos.</p>
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="modulo2.jpg" alt="Evidencia Módulo 2">
+                    <div class="pie-foto">Evidencia fotográfica del Módulo 2</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2><i class="fa-solid fa-laptop-code"></i> Módulo 3: Integración y Cierre</h2>
+            <div class="modulo-contenido">
+                <div>
+                    <h3>Desarrollo Temático</h3>
+                    <p>El último módulo se enfocó en la integración de saberes, abarcando las evaluaciones finales, la redacción de informes técnicos complejos y la implementación de soluciones estructuradas para el cierre del período lectivo, consolidando así los conocimientos clave de este ciclo de formación.</p>
+                </div>
+                <div class="tarjeta-foto">
+                    <img src="modulo3.jpg" alt="Evidencia Módulo 3">
+                    <div class="pie-foto">Evidencia fotográfica del Módulo 3</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <h2><i class="fa-solid fa-folder-open"></i> Mediateca</h2>
+            <p>Repositorio de material académico complementario, informes y presentaciones generados durante el semestre:</p>
             
-            <div class="grid-fotos">
-                
-                <div class="tarjeta-foto">
-                    <img src="foto1.jpg" alt="Evidencia 1">
-                    <div class="descripcion">
-                        <h3>Primer Corte</h3>
-                        <p>[Escribe aquí qué hiciste en esta foto, por ejemplo: Entrega de informes y primeros talleres de lógica].</p>
-                    </div>
-                </div>
+            <div class="grid-mediateca">
+                <a href="informe.pdf" target="_blank" class="item-descarga">
+                    <i class="fa-solid fa-file-pdf icon-pdf"></i>
+                    <span>Informe Final.pdf</span>
+                </a>
 
-                <div class="tarjeta-foto">
-                    <img src="foto2.jpg" alt="Evidencia 2">
-                    <div class="descripcion">
-                        <h3>Segundo Corte</h3>
-                        <p>[Escribe aquí qué hiciste en esta foto, por ejemplo: Evaluaciones parciales de tablas de verdad].</p>
-                    </div>
-                </div>
+                <a href="presentacion.pptx" download class="item-descarga">
+                    <i class="fa-solid fa-file-powerpoint icon-powerpoint"></i>
+                    <span>Exposición.pptx</span>
+                </a>
+            </div>
+        </section>
 
-                <div class="tarjeta-foto">
-                    <img src="foto3.jpg" alt="Evidencia 3">
-                    <div class="descripcion">
-                        <h3>Cierre de Semestre</h3>
-                        <p>[Escribe aquí qué hiciste en esta foto, por ejemplo: Defensa final y entrega de proyectos].</p>
-                    </div>
-                </div>
+        <section class="slide">
+            <h2><i class="fa-solid fa-square-poll-vertical"></i> Conclusiones y Recomendaciones</h2>
+            <h3>Conclusiones</h3>
+            <p>La culminación de este semestre valida la importancia de los pilares lógicos dentro de la informática, demostrando que la programación no se limita a escribir código, sino a la estructuración óptima del pensamiento para resolver problemas complejos.</p>
+            
+            <h3>Recomendaciones</h3>
+            <p>Se sugiere profundizar de manera constante de forma autónoma en herramientas complementarias y mantener una constancia diaria en la resolución de problemas lógicos y matemáticos para facilitar la asimilación de los contenidos venideros de la carrera.</p>
+        </section>
 
+        <section class="slide">
+            <h2><i class="fa-solid fa-comments"></i> Storytime del Semestre</h2>
+            <div class="storytime-box">
+                <p>"Si les contara todo lo que pasé este semestre para ver este proyecto en línea... Hubo noches de estudiar lógica donde las tablas de verdad no daban o la mente se bloqueaba a las 2 AM. Incluso al armar este portafolio web a contrarreloj en tres días, un simple error de tipeo me tiró un error 404 que me hizo dudar de mi carrera por diez minutos enteros, jajaja. Pero al final, ver la página adaptada, funcionando perfectamente en la PC y el teléfono, y dándome cuenta de que logré dominar herramientas reales de ingeniería como GitHub en tiempo récord, hace que cada taza de café y cada dolor de cabeza hayan valido completamente la pena. ¡Oficialmente un paso más cerca de ser ingeniero!"</p>
             </div>
         </section>
 
