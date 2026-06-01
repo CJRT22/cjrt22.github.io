@@ -1,18 +1,3 @@
-¡Entendido! Vamos a simplificarlo para que quede exactamente con dos imágenes por módulo.
-
-En lugar de una lista vertical larga, aproveché que ahora son solo dos fotos para organizarlas en una mini-cuadrícula de dos columnas (una al lado de la otra). De esta forma, visualmente se ve mucho más limpio, equilibrado y aprovecha mejor el espacio al lado del texto. En el teléfono se seguirán adaptando una debajo de la otra automáticamente.
-
-Las imágenes que buscará el código en GitHub serán:
-
-Módulo 1: modulo1.jpg y modulo1_2.jpg (se elimina modulo1_3.jpg)
-
-Módulo 2: modulo2.jpg y modulo2_2.jpg (se elimina modulo2_3.jpg)
-
-Módulo 3: modulo3.jpg y modulo3_2.jpg (se elimina modulo3_3.jpg)
-
-Aquí tienes tu código completo y actualizado con tus conceptos oficiales:
-
-HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -121,11 +106,11 @@ HTML
             margin-top: 20px;
         }
 
-        /* CUADRÍCULA PARA LAS 2 FOTOS (UNA AL LADO DE LA OTRA) */
+        /* CONTENEDOR VERTICAL PARA LAS FOTOS (MISMOS TAMAÑOS COMPLETOS) */
         .grid-fotos-modulo {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .tarjeta-foto {
@@ -137,14 +122,14 @@ HTML
 
         .tarjeta-foto img {
             width: 100%;
-            height: 200px; /* Altura ideal optimizada para el formato de dos fotos */
+            height: 230px; /* Mantiene la altura original e ideal para cada foto */
             object-fit: cover;
             display: block;
         }
 
         .tarjeta-foto .pie-foto {
             padding: 10px 12px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-align: center;
             background-color: #111827;
             color: #9ca3af;
@@ -212,11 +197,6 @@ HTML
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
-
-            .grid-fotos-modulo {
-                grid-template-columns: 1fr; /* Se apilan en vertical en teléfonos */
-                gap: 15px;
-            }
             
             .slide { padding: 20px; }
             h2 { font-size: 1.4rem; }
@@ -251,13 +231,13 @@ HTML
             <div class="modulo-contenido">
                 <div>
                     <h3>Desarrollo Temático</h3>
-                    <p>La lógica en la computación constituye el sistema fundamental de reglas formales y leyes matemáticas que rigen la manera en que una máquina procesa la información, estructurando el pensamiento abstracto para transformarlo en instrucciones ejecutables. Lejos de ser solo teoría, este marco actúa como la arquitectura intelectual y el "cerebro" abstracto detrás de cada desarrollo tecnológico, operando tanto en el diseño de algoritmos y software como en la construcción física de los circuitos y microprocesadores. Al proporcionar un método riguroso y libre de ambigüedades, la lógica permite que un systema informático evalúe condiciones, valide datos, tome decisiones complejas y resuelva problemas de forma totalmente predecible y exacta. En definitiva, representa el puente indispensable que conecta el razonamiento y la necesidad de resolución humana con la capacidad de ejecución de cualquier tecnología actual.</p>
+                    <p>La lógica en la computación constituye el sistema fundamental de reglas formales y leyes matemáticas que rigen la manera en que una máquina procesa la información, estructurando el pensamiento abstracto para transformarlo en instrucciones ejecutables. Lejos de ser solo teoría, este marco actúa como la arquitectura intelectual y el "cerebro" abstracto detrás de cada desarrollo tecnológico, operando tanto en el diseño de algoritmos y software como en la construcción física de los circuitos y microprocesadores. Al proporcionar un método riguroso y libre de ambigüedades, la lógica permite que un sistema informático evalúe condiciones, valide datos, tome decisiones complejas y resuelva problemas de forma totalmente predecible y exacta. En definitiva, representa el puente indispensable que conecta el razonamiento y la necesidad de resolución humana con la capacidad de ejecución de cualquier tecnología actual.</p>
                 </div>
                 
                 <div class="grid-fotos-modulo">
                     <div class="tarjeta-foto">
                         <img src="modulo1.jpg" alt="Evidencia Módulo 1 - Foto 1">
-                        <div class="pie-foto">Evidencia 1.1</div>
+                        <div class="pie-foto">Evidencia fotográfica del Módulo 1</div>
                     </div>
                     <div class="tarjeta-foto">
                         <img src="modulo1_2.jpg" alt="Evidencia Módulo 1 - Foto 2">
@@ -272,13 +252,13 @@ HTML
             <div class="modulo-contenido">
                 <div>
                     <h3>Desarrollo Temático</h3>
-                    <p>La lógica proposicional, o lógica de enunciados, representa la rama de la matemática que se encarga de analizar las OPOSICIONES (unidades de información que solo pueden asumir un valor de verdadero o falso) y las relaciones que se establecen entre ellas a través de conectores lógicos para estructurar argumentos válidos y demostrables. En el ámbito de la informática, este marco conceptual se traduce en el fundamento más puro para el desarrollo de la tecnología, ya que permite despojar al lenguaje humano de sus ambigüedades naturales y formalizarlo en un sistema binario perfectamente calculable por una máquina. A través de este proceso de abstracción, la lógica proposicional proporciona las reglas matemáticas necesarias tanto para la creación de algoritmos y el control de flujos en el software, como para el diseño de las compuertas físicas en los microprocesadores, consolidándose como la herramienta esencial para asegurar que un sistema informático ejecute operaciones y deducciones de manera exacta, consistente y predecible.</p>
+                    <p>La lógica proposicional, o lógica de enunciados, representa la rama de la matemática que se encarga de analizar las proposiciones (unidades de información que solo pueden asumir un valor de verdadero o falso) y las relaciones que se establecen entre ellas a través de conectores lógicos para estructurar argumentos válidos y demostrables. En el ámbito de la informática, este marco conceptual se traduce en el fundamento más puro para el desarrollo de la tecnología, ya que permite despojar al lenguaje humano de sus ambigüedades naturales y formalizarlo en un sistema binario perfectamente calculable por una máquina. A través de este proceso de abstracción, la lógica proposicional proporciona las reglas matemáticas necesarias tanto para la creación de algoritmos y el control de flujos en el software, como para el diseño de las compuertas físicas en los microprocesadores, consolidándose como la herramienta esencial para asegurar que un sistema informático ejecute operaciones y deducciones de manera exacta, consistente y predecible.</p>
                 </div>
                 
                 <div class="grid-fotos-modulo">
                     <div class="tarjeta-foto">
                         <img src="modulo2.jpg" alt="Evidencia Módulo 2 - Foto 1">
-                        <div class="pie-foto">Evidencia 2.1</div>
+                        <div class="pie-foto">Evidencia fotográfica del Módulo 2</div>
                     </div>
                     <div class="tarjeta-foto">
                         <img src="modulo2_2.jpg" alt="Evidencia Módulo 2 - Foto 2">
@@ -299,7 +279,7 @@ HTML
                 <div class="grid-fotos-modulo">
                     <div class="tarjeta-foto">
                         <img src="modulo3.jpg" alt="Evidencia Módulo 3 - Foto 1">
-                        <div class="pie-foto">Evidencia 3.1</div>
+                        <div class="pie-foto">Evidencia fotográfica del Módulo 3</div>
                     </div>
                     <div class="tarjeta-foto">
                         <img src="modulo3_2.jpg" alt="Evidencia Módulo 3 - Foto 2">
