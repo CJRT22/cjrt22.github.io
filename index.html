@@ -97,13 +97,21 @@
             font-size: 1.05rem;
         }
 
-        /* DISEÑO DE CONTENEDOR MÓDULOS (TEXTO + FOTO) */
+        /* DISEÑO DE CONTENEDOR MÓDULOS (TEXTO + FOTOS) */
         .modulo-contenido {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             align-items: start;
             margin-top: 20px;
+        }
+
+        /* NUEVA SUB-GRID PARA LAS DOS FOTOS ADICIONALES */
+        .galeria-secundaria {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
         }
 
         .tarjeta-foto {
@@ -120,9 +128,14 @@
             display: block;
         }
 
+        /* Altura adaptada para las fotos secundarias */
+        .tarjeta-foto.mini img {
+            height: 120px;
+        }
+
         .tarjeta-foto .pie-foto {
-            padding: 12px;
-            font-size: 0.9rem;
+            padding: 8px 12px;
+            font-size: 0.85rem;
             text-align: center;
             background-color: #111827;
             color: #9ca3af;
@@ -176,7 +189,7 @@
             background-color: #0f172a;
             border-radius: 8px;
             padding: 25px;
-            border-left: 4px solid #a855f7; /* Toque morado diferente para el storytime */
+            border-left: 4px solid #a855f7;
             font-style: italic;
         }
 
@@ -187,14 +200,20 @@
             .portada .subtitulo { font-size: 1.2rem; }
             
             .modulo-contenido {
-                grid-template-columns: 1fr; /* Pone la foto debajo del texto en celulares */
+                grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .galeria-secundaria {
+                grid-template-columns: 1fr; /* Apila las dos fotos secundarias en el celular */
+                gap: 15px;
             }
             
             .slide { padding: 20px; }
             h2 { font-size: 1.4rem; }
             
             .tarjeta-foto img { height: 200px; }
+            .tarjeta-foto.mini img { height: 150px; }
         }
     </style>
 </head>
@@ -219,12 +238,25 @@
             <p>El presente portafolio digital constituye una recopilación sistemática de las actividades, conocimientos y experiencias adquiridas a lo largo de este trayecto académico. A través de este espacio, se estructura el progreso alcanzado en las diferentes unidades del saber, reflejando el desarrollo de competencias lógicas, analíticas y tecnológicas fundamentales para el ejercicio de la Ingeniería en Informática.</p>
         </section>
 
+        <!-- MÓDULO 1 -->
         <section class="slide">
             <h2><i class="fa-solid fa-cubes"></i> Módulo 1: ¿Que es la lógica? </h2>
             <div class="modulo-contenido">
                 <div>
                     <h3>Desarrollo Temático</h3>
                     <p>La lógica en computación es el conjunto de reglas formales, leyes matemáticas y estructuras de pensamiento que definen cómo una computadora procesa la información, toma decisiones y resuelve problemas. Es el "cerebro" abstracto detrás de cualquier programa, algoritmo o circuito físico.</p>
+                    
+                    <!-- Fotos adicionales debajo del texto -->
+                    <div class="galeria-secundaria">
+                        <div class="tarjeta-foto mini">
+                            <img src="modulo1_2.jpg" alt="Evidencia Módulo 1 - Foto 2">
+                            <div class="pie-foto">Evidencia 1.2</div>
+                        </div>
+                        <div class="tarjeta-foto mini">
+                            <img src="modulo1_3.jpg" alt="Evidencia Módulo 1 - Foto 3">
+                            <div class="pie-foto">Evidencia 1.3</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tarjeta-foto">
                     <img src="modulo1.jpg" alt="Evidencia Módulo 1">
@@ -233,12 +265,25 @@
             </div>
         </section>
 
+        <!-- MÓDULO 2 -->
         <section class="slide">
             <h2><i class="fa-solid fa-code"></i> Módulo 2: Lógica proposicional </h2>
             <div class="modulo-contenido">
                 <div>
                     <h3>Desarrollo Temático</h3>
                     <p>La lógica proposicional (también llamada lógica de enunciados) es la rama de la lógica matemática que estudia las proposiciones y las formas en que se combinan mediante conectores lógicos para construir argumentos válidos. En la computación, representa el fundamento matemático más puro para el diseño de software y hardware, ya que permite formalizar el razonamiento humano en un lenguaje que una máquina puede calcular de forma exacta.</p>
+                    
+                    <!-- Fotos adicionales debajo del texto -->
+                    <div class="galeria-secundaria">
+                        <div class="tarjeta-foto mini">
+                            <img src="modulo2_2.jpg" alt="Evidencia Módulo 2 - Foto 2">
+                            <div class="pie-foto">Evidencia 2.2</div>
+                        </div>
+                        <div class="tarjeta-foto mini">
+                            <img src="modulo2_3.jpg" alt="Evidencia Módulo 2 - Foto 3">
+                            <div class="pie-foto">Evidencia 2.3</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tarjeta-foto">
                     <img src="modulo2.jpg" alt="Evidencia Módulo 2">
@@ -247,12 +292,25 @@
             </div>
         </section>
 
+        <!-- MÓDULO 3 -->
         <section class="slide">
             <h2><i class="fa-solid fa-laptop-code"></i> Módulo 3: Sistema de deducción natural </h2>
             <div class="modulo-contenido">
                 <div>
                     <h3>Desarrollo Temático</h3>
                     <p>El sistema de deducción natural es un método de la lógica formal que busca imitar el razonamiento humano paso a paso para demostrar la validez de un argumento. A diferencia de otros métodos mecánicos (como las tablas de verdad), este sistema no evalúa todas las combinaciones posibles de unos y ceros, sino que parte de premisas iniciales aceptadas como verdaderas y aplica reglas de inferencia directas —como el Modus Ponens— para derivar una conclusión lógica. En computación, este enfoque es fundamental para la verificación formal de software, ya que permite tratar a un programa de computadora como si fuera un teorema matemático y demostrar con absoluta certeza que el código es correcto y está libre de errores antes de ejecutarlo.</p>
+                    
+                    <!-- Fotos adicionales debajo del texto -->
+                    <div class="galeria-secundaria">
+                        <div class="tarjeta-foto mini">
+                            <img src="modulo3_2.jpg" alt="Evidencia Módulo 3 - Foto 2">
+                            <div class="pie-foto">Evidencia 3.2</div>
+                        </div>
+                        <div class="tarjeta-foto mini">
+                            <img src="modulo3_3.jpg" alt="Evidencia Módulo 3 - Foto 3">
+                            <div class="pie-foto">Evidencia 3.3</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tarjeta-foto">
                     <img src="modulo3.jpg" alt="Evidencia Módulo 3">
@@ -263,7 +321,7 @@
 
         <section class="slide">
             <h2><i class="fa-solid fa-folder-open"></i> Mediateca</h2>
-            <p>Repositorio de material académico complementario</p>
+            <p>Repositorio de material académico complementario, informes y presentaciones generados durante el semestre:</p>
             
             <div class="grid-mediateca">
                 <a href="logica.pdf" target="_blank" class="item-descarga">
@@ -279,7 +337,7 @@
         </section>
 
         <section class="slide">
-            <h2><i class="fa-solid fa-square-poll-vertical"></i> Conclusiones y Recomendaciones</h2>
+            <h2><i class="fa-solid fa-square-poll-vertical"></i> Conclusiones y Recommendations</h2>
             <h3>Conclusiones</h3>
             <p>La culminación de este semestre valida la importancia de los pilares lógicos dentro de la informática, demostrando que la programación no se limita a escribir código, sino a la estructuración óptima del pensamiento para resolver problemas complejos.</p>
             
