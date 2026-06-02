@@ -106,7 +106,7 @@
             margin-top: 20px;
         }
 
-        /* CONTENEDOR VERTICAL PARA LAS FOTOS (MISMOS TAMAÑOS COMPLETOS) */
+        /* CONTENEDOR VERTICAL PARA LAS FOTOS */
         .grid-fotos-modulo {
             display: grid;
             grid-template-columns: 1fr;
@@ -122,9 +122,16 @@
 
         .tarjeta-foto img {
             width: 100%;
-            height: 230px; /* Mantiene la altura original e ideal para cada foto */
+            height: 230px; /* Altura estándar para fotos horizontales */
             object-fit: cover;
             display: block;
+        }
+
+        /* ESTILO EXCLUSIVO PARA LA FOTO VERTICAL (MÓDULO 3, EVIDENCIA 2) */
+        .tarjeta-foto.foto-vertical img {
+            height: 400px; /* Altura alargada ideal para capturas de teléfono en PC */
+            object-fit: contain; /* Evita que la foto vertical se corte en los bordes */
+            background-color: #090d16; /* Fondo oscuro sutil para rellenar los laterales si es necesario */
         }
 
         .tarjeta-foto .pie-foto {
@@ -202,6 +209,7 @@
             h2 { font-size: 1.4rem; }
             
             .tarjeta-foto img { height: 210px; }
+            .tarjeta-foto.foto-vertical img { height: 350px; } /* Ajuste de altura vertical en móviles */
         }
     </style>
 </head>
@@ -252,7 +260,7 @@
             <div class="modulo-contenido">
                 <div>
                     <h3>Desarrollo Temático</h3>
-                    <p>La lógica proposicional, o lógica de enunciados, representa la rama de la matemática que se encarga de analizar las proposiciones (unidades de información que solo pueden asumir un valor de verdadero o falso) y las relaciones que se establecen entre ellas a través de conectores lógicos para estructurar argumentos válidos y demostrables. En el ámbito de la informática, este marco conceptual se traduce en el fundamento más puro para el desarrollo de la tecnología, ya que permite despojar al lenguaje humano de sus ambigüedades naturales y formalizarlo en un sistema binario perfectamente calculable por una máquina. A través de este proceso de abstracción, la lógica proposicional proporciona las reglas matemáticas necesarias tanto para la creación de algoritmos y el control de flujos en el software, como para el diseño de las compuertas físicas en los microprocesadores, consolidándose como la herramienta esencial para asegurar que un sistema informático ejecute operaciones y deducciones de manera exacta, consistente y predecible.</p>
+                    <p>La lógica proposicional, o lógica de enunciados, representa la rama de la matemática que se encarga de analizar las proposiciones (unidades de información que solo pueden asumir un valor de verdadero o falso) y las relaciones que se establecen entre ellas a través de conectores lógicos para estructurar argumentos válidos y demostrables. En el ámbito de la informática, este marco conceptual se traduce en el fundamento más puro para el desarrollo de la tecnología, ya que permite despojar al lenguaje humano de sus ambigüedades naturales y formalizarlo en un sistema binario perfectamente calculable por una máquina. A través de este proceso de abstracción, la lógica proposicional proporciona las reglas matemáticas necesarias tanto para la creación de algoritmos y control de flujos en el software, como para el diseño de las compuertas físicas en los microprocesadores, consolidándose como la herramienta esencial para asegurar que un sistema informático ejecute operaciones y deducciones de manera exacta, consistente y predecible.</p>
                 </div>
                 
                 <div class="grid-fotos-modulo">
@@ -281,8 +289,8 @@
                         <img src="modulo3.jpg" alt="Evidencia Módulo 3 - Foto 1">
                         <div class="pie-foto">Evidencia fotográfica del Módulo 3</div>
                     </div>
-                    <div class="tarjeta-foto">
-                        <img src="modulo3_2.jpg" alt="Evidencia Módulo 3 - Foto 2">
+                    <div class="tarjeta-foto foto-vertical">
+                        <img src="modulo3_2.jpg" alt="Evidencia Módulo 3 - Foto 2 (Vertical)">
                         <div class="pie-foto">Evidencia 3.2</div>
                     </div>
                 </div>
@@ -296,12 +304,12 @@
             <div class="grid-mediateca">
                 <a href="logica.pdf" target="_blank" class="item-descarga">
                     <i class="fa-solid fa-file-pdf icon-pdf"></i>
-                    <span>introduccion a la lógica</span>
+                    <span>logica.pdf</span>
                 </a>
 
-                <a href="presentacion.pdf" target="_blank" class="item-descarga">
+                <a href="presentacion.pptx" download class="item-descarga">
                     <i class="fa-solid fa-file-powerpoint icon-powerpoint"></i>
-                    <span>presentacion de lógica</span>
+                    <span>powerpoint.pptx</span>
                 </a>
             </div>
         </section>
